@@ -364,7 +364,16 @@ for(var i=0;i<els.length;i++){var k=els[i].getAttribute('data-i18n');if(k){var v
 else if(els[i].getAttribute('data-i18n-placeholder')){var pk=els[i].getAttribute('data-i18n-placeholder');els[i].placeholder=__t(pk,els[i].placeholder);}
 }
 __updateSwitcher();
-// redirect disabled — all content at /en/, JS handles language
+if(redirect!==false){
+var path=window.location.pathname;
+var basePath='/',inLangFolder=false;
+var SUPP=["en","zh-CN","ja","ko"];
+for(var i=0;i<SUPP.length;i++){var idx=path.indexOf('/'+SUPP[i]+'/');if(idx>=0){inLangFolder=SUPP[i];basePath=path.substring(0,idx);break;}}
+if(basePath===''||basePath==='/')basePath='/';
+if(inLangFolder&&SUPP.indexOf(lang)>=0){window.location.href=path.replace('/'+inLangFolder+'/','/'+lang+'/');}
+else if(lang!=='en'&&SUPP.indexOf(lang)>=0){window.location.href='/'+lang+'/';}
+else{__lang=lang;localStorage.setItem('lang',lang);__updateSwitcher();}
+}
 }
 function __injectSwitcher(){
 var nav=document.querySelector('nav');
