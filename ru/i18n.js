@@ -367,7 +367,7 @@ __updateSwitcher();
 if(redirect!==false){
 var path=window.location.pathname;
 var basePath='/',inLangFolder=false;
-var SUPP=["en","zh-CN","ja","ko"];
+var SUPP=["en","zh-CN","ja","ko","ru"];
 for(var i=0;i<SUPP.length;i++){var idx=path.indexOf('/'+SUPP[i]+'/');if(idx>=0){inLangFolder=SUPP[i];basePath=path.substring(0,idx);break;}}
 if(basePath===''||basePath==='/')basePath='/';
 if(inLangFolder&&SUPP.indexOf(lang)>=0){window.location.href=path.replace('/'+inLangFolder+'/','/'+lang+'/');}
