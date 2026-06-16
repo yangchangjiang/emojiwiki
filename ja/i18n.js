@@ -337,7 +337,7 @@ seo_emoji_title:'{emoji} {name} — Копировать Эмодзи | EmojiWik
 seo_emoji_desc:'Скопируйте эмодзи {emoji} {name}. Юникод: {unicode}. Бесплатная энциклопедия.',
 }
 };
-var __LANGS = [{code:"en",name:"English"},{code:"zh-CN",name:"简体中文"},{code:"ja",name:"日本語"},{code:"ko",name:"한국어"},{code:"es",name:"Español"},{code:"pt",name:"Português"},{code:"fr",name:"Français"},{code:"de",name:"Deutsch"},{code:"ar",name:"العربية"},{code:"hi",name:"हिन्दी"},{code:"th",name:"ไทย"},{code:"vi",name:"Tiếng Việt"},{code:"id",name:"Bahasa Indonesia"},{code:"ru",name:"Русский"}];
+var __LANGS=[{code:"en",name:"English",native:"English"},{code:"zh-CN",name:"Chinese",native:"简体中文"},{code:"ja",name:"Japanese",native:"日本語"},{code:"ko",name:"Korean",native:"한국어"},{code:"ru",name:"Russian",native:"Русский"}];
 var __SUPPORTED = __LANGS.map(function(l){return l.code});
 var __lang='en';
 function __detectLang(){
