@@ -6,7 +6,7 @@
 <title data-i18n="about_title">About — Exchange Rate Today</title>
 <meta name="description" content="About Exchange Rate Today — free online tools, browser-based, no uploads.">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#f59e0b">
+<meta name="theme-color" content="#6366f1">
 <link rel="canonical" href="https://fxrate.today/about.html">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","name":"About","url":"https://fxrate.today/about.html"}
@@ -40,13 +40,12 @@ footer a{color:var(--text2);}footer .footer-links{display:flex;justify-content:c
 <header role="banner">
   <div class="container">
     <a href="./" class="logo"><span>🔄</span> <span data-i18n="siteName">Exchange Rate Today</span></a>
-    <nav>
+    <nav><div class="lang-wrap"><button class="lang-btn" onclick="this.nextElementSibling.classList.toggle('show')">🌐</button><div class="lang-dropdown"><button onclick="goLang('en')">English</button><button onclick="goLang('zh-CN')">简体中文</button><button onclick="goLang('ja')">日本語</button><button onclick="goLang('ko')">한국어</button><button onclick="goLang('ru')">Русский</button></div></div><script>var L=["zh-CN","ja","ko","ru"];function goLang(l){var p=window.location.pathname;for(var i=0;i<L.length;i++){if(p.indexOf("/"+L[i]+"/")>=0){if(l==="en"){window.location.href=p.replace("/"+L[i]+"/","/")}else{window.location.href=p.replace("/"+L[i]+"/","/"+l+"/")}return}}var parts=p.split("/").filter(function(x){return x.length>0});var pg=parts.join("/")||"index.html";if(l==="en"){window.location.href="/"+pg}else{window.location.href="/"+l+"/"+pg}}document.addEventListener("click",function(e){if(!e.target.closest(".lang-wrap")){var d=document.querySelector(".lang-dropdown");if(d)d.classList.remove("show")}});</script><style>.lang-wrap{position:relative}.lang-btn{background:0 0;border:1px solid var(--border);padding:6px 12px;border-radius:8px;cursor:pointer;font-size:.85rem;color:var(--text)}.lang-dropdown{display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);z-index:999;min-width:140px;padding:4px 0}.lang-dropdown.show{display:block}.lang-dropdown button{display:block;width:100%;text-align:left;padding:6px 16px;border:none;background:0 0;font-size:.85rem;cursor:pointer;color:var(--text)}.lang-dropdown button:hover{background:var(--accent-bg)}</style>
       <a href="./" data-i18n="navHome">Home</a>
       <a href="privacy.html" data-i18n="navPrivacy">Privacy</a>
       <a href="terms.html" data-i18n="navTerms">Terms</a>
       <div class="lang-switcher" aria-label="Language selector"></div>
-    <div class="lang-wrap"><button class="lang-btn" onclick="this.nextElementSibling.classList.toggle('show')">🌐</button><div class="lang-dropdown"><button onclick="goLang('en')">English</button><button onclick="goLang('zh-CN')">简体中文</button><button onclick="goLang('ja')">日本語</button><button onclick="goLang('ko')">한국어</button><button onclick="goLang('ru')">Русский</button></div></div><script>var L=["en","zh-CN","ja","ko","ru"];function goLang(l){var p=window.location.pathname;for(var i=0;i<L.length;i++){if(p.indexOf("/"+L[i]+"/")>=0){if(l==="en"){window.location.href=p.replace("/"+L[i]+"/","/")}else{window.location.href=p.replace("/"+L[i]+"/","/"+l+"/")}return}}var parts=p.split("/").filter(function(x){return x.length>0});var pg=parts.join("/")||"index.html";if(l==="en"){window.location.href="/"+pg}else{window.location.href="/"+l+"/"+pg}}document.addEventListener("click",function(e){if(!e.target.closest(".lang-wrap")){var d=document.querySelector(".lang-dropdown");if(d)d.classList.remove("show")}});</script><style>.lang-wrap{position:relative}.lang-btn{background:0 0;border:1px solid var(--border);padding:6px 12px;border-radius:8px;cursor:pointer;font-size:.85rem;color:var(--text)}.lang-dropdown{display:none;position:absolute;top:100%;right:0;background:var(--surface);border:1px solid var(--border);border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);z-index:999;min-width:140px;padding:4px 0}.lang-dropdown.show{display:block}.lang-dropdown button{display:block;width:100%;text-align:left;padding:6px 16px;border:none;background:0 0;font-size:.85rem;cursor:pointer;color:var(--text)}.lang-dropdown button:hover{background:var(--accent-bg)}</style>
-</nav>
+    </nav>
   </div>
 </header>
 
