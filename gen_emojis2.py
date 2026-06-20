@@ -40,7 +40,7 @@ def make_emoji_page(e):
     return body
 
 print("Generating " + str(len(emojis)) + " emoji pages...")
-emoji_dir = os.path.join(BASE, "en", "emoji")
+emoji_dir = os.path.join(BASE, "emoji")
 os.makedirs(emoji_dir, exist_ok=True)
 
 for i, e in enumerate(emojis):
@@ -73,7 +73,7 @@ idx += '</main>\n' + FOOTER + '\n<script src="' + PREFIX + '/i18n.js"></script>\
 idx += '<script>document.getElementById("search").addEventListener("input",function(){var q=this.value.toLowerCase();document.querySelectorAll(".emoji-card").forEach(function(c){c.style.display=c.querySelector(".label").textContent.toLowerCase().includes(q)?"":"none"})});</script>\n'
 idx += '</body>\n</html>'
 
-with open(os.path.join(BASE, "en", "index.html"), "w", encoding="utf-8") as f:
+with open(os.path.join(BASE, "index.html"), "w", encoding="utf-8") as f:
     f.write(idx)
 print("  Index done")
 
