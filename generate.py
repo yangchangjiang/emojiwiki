@@ -52,7 +52,7 @@ for i, e in enumerate(emojis):
     html = base_template.replace("{meta_section}", f'''<title>{title}</title>
 <meta name="description" content="{desc}">
 <meta name="keywords" content="{e['emoji']},{e['name']},emoji,copy emoji,{e['name']} emoji copy">
-<link rel="canonical" href="https://{DOMAIN}/en/emoji/{emoji_id}.html">''')
+<link rel="canonical" href="https://{DOMAIN}/emoji/{emoji_id}.html">''')
     
     html = html.replace("{content}", content)
     html = html.replace("{scripts}", f'''<script>
