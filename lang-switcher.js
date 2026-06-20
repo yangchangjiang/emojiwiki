@@ -1,4 +1,6 @@
 (function(){
+var BASE=window.location.pathname.match(/^\/[^\/]+\//)||["/"];
+if(BASE[0]==="/")BASE="/";else BASE=BASE[0];
 var L=["zh-CN","ja","ko","ru"];
 function goLang(l){
   var p=window.location.pathname;
