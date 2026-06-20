@@ -370,7 +370,7 @@ var basePath='/',inLangFolder=false;
 var SUPP=["en","zh-CN","ja","ko","ru"];
 for(var i=0;i<SUPP.length;i++){var idx=path.indexOf('/'+SUPP[i]+'/');if(idx>=0){inLangFolder=SUPP[i];basePath=path.substring(0,idx);break;}}
 if(basePath===''||basePath==='/')basePath='/';
-if(inLangFolder&&SUPP.indexOf(lang)>=0){window.location.href=path.replace('/'+inLangFolder+'/','/'+lang+'/');}
+if(inLangFolder&&SUPP.indexOf(lang)>=0){var toPath=lang==='en'?'/':'/'+lang+'/';window.location.href=path.replace('/'+inLangFolder+'/',toPath);}
 else if(lang!=='en'&&SUPP.indexOf(lang)>=0){window.location.href='/'+lang+'/';}
 else{__lang=lang;localStorage.setItem('lang',lang);__updateSwitcher();}
 }
