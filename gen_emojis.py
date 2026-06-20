@@ -18,7 +18,7 @@ header = '<header><div class="container"><nav><a class="logo" href="/en/">&#x1F6
 footer = '<footer><div class="container">(c) 2026 EmojiWiki. <a href="/en/privacy.html">Privacy</a> | <a href="/en/terms.html">Terms</a></div></footer>'
 
 # Generate emoji pages
-emoji_dir = os.path.join(BASE, "en", "emoji")
+emoji_dir = os.path.join(BASE, "emoji")
 os.makedirs(emoji_dir, exist_ok=True)
 
 for i, e in enumerate(emojis):
@@ -71,7 +71,7 @@ idx_html += '<div class="grid">\n' + "\n".join(grid) + '\n</div>\n'
 idx_html += '<script>document.getElementById("search").addEventListener("input",function(){var q=this.value.toLowerCase();document.querySelectorAll(".emoji-card").forEach(function(c){c.style.display=c.querySelector(".label").textContent.toLowerCase().includes(q)?"":"none"})})</script>\n'
 idx_html += '</main>\n' + footer + '\n</body>\n</html>'
 
-with open(os.path.join(BASE, "en", "index.html"), "w", encoding="utf-8") as f:
+with open(os.path.join(BASE, "index.html"), "w", encoding="utf-8") as f:
     f.write(idx_html)
 print("  Generated index page")
 
