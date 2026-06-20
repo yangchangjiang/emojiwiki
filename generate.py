@@ -76,7 +76,7 @@ print(f"  ✓ {len(emojis)} emoji pages generated")
 print("Generating index page...")
 grid_items = []
 for e in emojis[:500]:  # First 500 emojis
-    grid_items.append(f'''<a class="emoji-card" href="/en/emoji/{e['id']}.html"><span class="em">{e['emoji']}</span><span class="label">{e['name'][:20]}</span></a>''')
+    grid_items.append(f'''<a class="emoji-card" href="/emoji/{e['id']}.html"><span class="em">{e['emoji']}</span><span class="label">{e['name'][:20]}</span></a>''')
 
 index_title = "Emoji Copy & Paste — Free Emoji Encyclopedia | EmojiWiki"
 index_desc = "Copy and paste emoji. Browse 3,759 emojis with search, categories, unicode, and HTML entities. 100% free."
@@ -97,7 +97,7 @@ index_html = index_html.replace("{content}", f'''<h1>😊 Emoji Copy & Paste</h1
 <p>Browse and copy 3,759 emojis. Click any emoji to copy it, or search by name.</p>
 <input class="search-box" id="emojiSearch" placeholder="Search emoji..." type="text">
 <div class="grid">{''.join(grid_items)}</div>
-<p style="text-align:center;margin-top:20px"><a href="/en/emoji/">View all 3,759 emojis →</a></p>''')
+<p style="text-align:center;margin-top:20px"><a href="/emoji/">View all 3,759 emojis →</a></p>''')
 
 os.makedirs(os.path.join(BASE, "en"), exist_ok=True)
 with open(os.path.join(BASE, "en", "index.html"), "w", encoding="utf-8") as f:
