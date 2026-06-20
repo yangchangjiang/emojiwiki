@@ -379,11 +379,24 @@ function __injectSwitcher(){
 var nav=document.querySelector('nav');
 if(!nav)return;
 var div=document.createElement('div');
-// LANGUAGE SELECTOR REMOVED — using lang-switcher.js instead
+div.className='language-select';
+div.innerHTML='<button class="lang-btn">🌐 '+__t('nav_'+__lang.replace('-',''),__lang)+'</button><div class="lang-dropdown"></div>';
+nav.appendChild(div);
+var btn=div.querySelector('.lang-btn');
+var dd=div.querySelector('.lang-dropdown');
+btn.addEventListener('click',function(e){e.stopPropagation();dd.classList.toggle('show');});
+for(let i=0;i<__LANGS.length;i++){
+let l=__LANGS[i];
+let b=document.createElement('button');
+b.textContent=l.name;
+b.addEventListener('click',function(){__setLang(l.code);dd.classList.remove('show');});
+dd.appendChild(b);
+}
 document.addEventListener('click',function(){dd.classList.remove('show');});
 }
 function __updateSwitcher(){
-// REMOVED lang-btn
+var btn=document.querySelector('.lang-btn');
+if(btn)btn.textContent='🌐 '+__t('nav_'+__lang.replace('-',''),__lang);
 }
 (function(){
 __lang=__detectLang();

@@ -32,7 +32,7 @@ for i, e in enumerate(emojis):
     desc = "Copy and paste the " + emoji_char + " " + name + " emoji. Unicode U+" + cp.upper().replace(" ", " U+").encode("ascii","ignore").decode() + ". Free emoji encyclopedia."
     kw = emoji_char + "," + name + ",emoji,copy emoji," + name + " emoji copy"
     
-    html = page_head(title, desc, kw) + '<script src="/lang-switcher.js?v=2"></script>' + css + '</head>\n<body>\n' + header + '\n<main class="container">\n'
+    html = page_head(title, desc, kw) + ' + css + '</head>\n<body>\n' + header + '\n<main class="container">\n'
     html += '<div style="font-size:.85rem;color:var(--text2);margin:15px 0"><a href="/">Home</a> / ' + emoji_char + ' ' + name + '</div>\n'
     html += '<div class="emoji-display" onclick="var t=this;navigator.clipboard.writeText(this.textContent);t.style.background=\'#d1fae5\';setTimeout(function(){t.style.background=\'\'},800)">' + emoji_char + '</div>\n'
     html += '<h1>' + emoji_char + ' ' + name + '</h1>\n'
